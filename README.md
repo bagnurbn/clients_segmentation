@@ -1,10 +1,19 @@
-python -m venv .venv
+Credit Card Clients Segmentation (K-Means + Streamlit)
 
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-.\.venv\Scripts\Activate.ps1
+├─ О проекте
+Цель — построить end-to-end решение: от кластеризации клиентов (K-Means) до веб-интерфейса на Streamlit для классификации новых клиентов в реальном времени.
+Алгоритм: K-Means на стандартизированных признаках.
+Данные: Kaggle — Credit Card Dataset for Clustering (артикул CC GENERAL.csv).
+Фронт: Streamlit с аккуратным вводом признаков (слайдеры 0..1 для частот, числовые поля для сумм).
 
-pip install -U pip
-pip install pandas numpy scikit-learn matplotlib seaborn joblib streamlit jupyter
+├─ Структура
+streamlit_app.py – фронт.
+kmeans_model.pkl – модель.
+scaler.pkl – скейлер.
+model.ipynb – обучение модели.
+requirements.txt – используемые библиотеки в проекте.
 
-
-Python: 3.11.9
+├─ Инструкция по пользованию:
+Пройдите по ссылке: https://clientssegmentation-frxnfu8klaxdgaflghynkl.streamlit.app/
+В форме заполните поля.
+Нажмите Predict Cluster.
