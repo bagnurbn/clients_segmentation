@@ -35,8 +35,8 @@ SEGMENT_NAME = {
 
 @st.cache_resource
 def load_model_and_scaler():
-    model = joblib.load('kmeans_model.joblib')
-    scaler = joblib.load('scaler.joblib')
+    model = joblib.load('kmeans_model.pkl')
+    scaler = joblib.load('scaler.pkl')
     return model, scaler
 
 kmeans, scaler = load_model_and_scaler()
@@ -95,4 +95,5 @@ if st.button("Predict Cluster"):
         name = SEGMENT_NAME.get(seg, "Unknown")
         st.success(f"Predicted Cluster: {seg} — **{name}**")
     except ValueError as e:
+
         st.error(f"Input/feature mismatch: {e}")
